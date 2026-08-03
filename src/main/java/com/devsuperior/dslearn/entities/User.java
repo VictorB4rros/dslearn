@@ -2,9 +2,7 @@ package com.devsuperior.dslearn.entities;
 
 import jakarta.persistence.*;
 
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_user")
@@ -16,6 +14,9 @@ public class User {
     private String name;
     private String email;
     private String password;
+
+    @OneToMany(mappedBy = "user")
+    List<Notification> notifications = new ArrayList<>();
 
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "tb_user_role",
@@ -72,6 +73,10 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public List<Notification> getNotifications() {
+        return notifications;
     }
 
     @Override
