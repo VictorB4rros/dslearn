@@ -12,3 +12,5 @@ INSERT INTO tb_user_role (user_id, role_id) VALUES (2, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 1);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 2);
 INSERT INTO tb_user_role (user_id, role_id) VALUES (3, 3);
+
+INSERT INTO tb_course (name, img_Uri, img_Gray_Uri) VALUES ('Bootcamp HTML', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRlNK8PI_jQ9uQ2OFx5MyYKhlJx5VBLlxR63cEb5nzi_29l9oxaYEsb_HI&s=10', 'https://img.magnific.com/premium-vector/open-book-icon-reading-education-vector-illustration_89223-715.jpg?semt=ais_hybrid&w=740&q=80');
