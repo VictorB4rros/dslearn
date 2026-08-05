@@ -32,6 +32,9 @@ public abstract class Lesson {
     @OneToMany(mappedBy = "lesson")
     List<Deliver> deliveries = new ArrayList<>();
 
+    @OneToMany(mappedBy = "lesson")
+    List<Topic> topics = new ArrayList<>();
+
     public Lesson() {
     }
 
