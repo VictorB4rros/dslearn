@@ -87,6 +87,10 @@ public class Offer {
         return resources;
     }
 
+    public List<Topic> getTopics() {
+        return topics;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Offer offer)) return false;
