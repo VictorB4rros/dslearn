@@ -3,9 +3,7 @@ package com.devsuperior.dslearn.entities;
 import jakarta.persistence.*;
 
 import java.time.Instant;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_topic")
@@ -33,6 +31,13 @@ public class Topic {
     @ManyToOne
     @JoinColumn(name = "author_id")
     private User author;
+
+    @OneToMany(mappedBy = "topic")
+    private List<Reply> replies = new ArrayList<>();
+
+    @ManyToOne
+    @JoinColumn(name = "reply_id")
+    private Reply answer;
 
     @ManyToMany
     @JoinTable(name = "tb_topic_likes",
@@ -111,6 +116,18 @@ public class Topic {
 
     public void setAuthor(User author) {
         this.author = author;
+    }
+
+    public Reply getAnswer() {
+        return answer;
+    }
+
+    public void setAnswer(Reply answer) {
+        this.answer = answer;
+    }
+
+    public List<Reply> getReplies() {
+        return replies;
     }
 
     @Override
